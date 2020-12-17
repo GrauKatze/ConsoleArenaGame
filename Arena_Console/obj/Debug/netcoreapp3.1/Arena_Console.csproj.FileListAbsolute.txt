@@ -1,0 +1,13 @@
+D:\GIT_Project\Arena_Console\Arena_Console\obj\Debug\netcoreapp3.1\Arena_Console.csprojAssemblyReference.cache
+D:\GIT_Project\Arena_Console\Arena_Console\obj\Debug\netcoreapp3.1\Arena_Console.AssemblyInfoInputs.cache
+D:\GIT_Project\Arena_Console\Arena_Console\obj\Debug\netcoreapp3.1\Arena_Console.AssemblyInfo.cs
+D:\GIT_Project\Arena_Console\Arena_Console\obj\Debug\netcoreapp3.1\Arena_Console.csproj.CoreCompileInputs.cache
+D:\GIT_Project\Arena_Console\Arena_Console\bin\Debug\netcoreapp3.1\Arena_Console.exe
+D:\GIT_Project\Arena_Console\Arena_Console\bin\Debug\netcoreapp3.1\Arena_Console.deps.json
+D:\GIT_Project\Arena_Console\Arena_Console\bin\Debug\netcoreapp3.1\Arena_Console.runtimeconfig.json
+D:\GIT_Project\Arena_Console\Arena_Console\bin\Debug\netcoreapp3.1\Arena_Console.runtimeconfig.dev.json
+D:\GIT_Project\Arena_Console\Arena_Console\bin\Debug\netcoreapp3.1\Arena_Console.dll
+D:\GIT_Project\Arena_Console\Arena_Console\bin\Debug\netcoreapp3.1\Arena_Console.pdb
+D:\GIT_Project\Arena_Console\Arena_Console\obj\Debug\netcoreapp3.1\Arena_Console.dll
+D:\GIT_Project\Arena_Console\Arena_Console\obj\Debug\netcoreapp3.1\Arena_Console.pdb
+D:\GIT_Project\Arena_Console\Arena_Console\obj\Debug\netcoreapp3.1\Arena_Console.genruntimeconfig.cache
