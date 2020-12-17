@@ -6,7 +6,10 @@ namespace Arena_Console
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+
         }
+        void Inizial(){}
+        void Podgotovka(Enemy enemy, int LvL){}
+        void Battle(Enemy enemy, int LvL){}
     }
 }
