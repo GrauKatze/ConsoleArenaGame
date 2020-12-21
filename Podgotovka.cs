@@ -10,6 +10,7 @@ class Podgotovka
                 switch(Console.ReadLine()){
                     case "1":
                     Shop shop = new Shop();
+                    shop.ShopMenu();
                     break;
                     case "2":
                         Battle btl = new Battle();
