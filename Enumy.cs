@@ -1,8 +1,9 @@
 using System;
 class Enumy{
     public string name;
-    private int HP;
-    private int streng;
+    private int HP; 
+    public int MAX_HP = 10 + 2*streng;
+    private static int streng;
     private int shield;
     private int koshel;
     //Боевые
@@ -12,7 +13,17 @@ class Enumy{
         return result;
     }
     public int Deffend(int streng, int shield) => streng+shield;   
-    public void Hill(int hill) => HP+=hill;
+    public void Hill(int hill) {
+        if(HP<MAX_HP){ 
+            if(HP+hill>MAX_HP){
+                HP=MAX_HP;
+            }else{
+                HP+=hill;
+            }
+        }
+    }
+    public void StrengUpEnemy() => streng++;
+    public void ShildUpUpEnemy() => shield++;
     
     //Магазин
     public int GiveMoney(int Price){
@@ -24,6 +35,13 @@ class Enumy{
         return Price;
     }
     public void TakeMoney(int Prise) => koshel+=Prise;
+    public void Stata(){
+        Console.WriteLine("ИМЯ: "+name);
+        Console.WriteLine("СИЛА: "+streng);
+        Console.WriteLine("ЖИЗНИ: "+HP);
+        Console.WriteLine("ЗАЩИТА: "+shield);
+        Console.WriteLine("КОШЕЛЬ: "+koshel);
+    }
 
     //Конструктор для игрока
     public Enumy(){
@@ -38,6 +56,6 @@ class Enumy{
         HP = 10 + (5*LvL);
         streng = 10;
         shield = 0+5*LvL;
-        koshel = 2+ rnd.Next(LvL,4*LvL);
+        koshel = 2+ rnd.Next(LvL,4+LvL);
     }
 }
