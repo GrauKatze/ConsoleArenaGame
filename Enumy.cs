@@ -2,17 +2,21 @@ using System;
 class Enumy{
     public string name;
     private int HP; 
+    public int GetHP(){
+        return HP;
+    }
     public int MAX_HP = 10 + 2*streng;
     private static int streng;
     private int shield;
     private int koshel;
+    public bool IsPlaer;
     //Боевые
-    public int Attack(int[] weapon, int streng){
+    public int Attack(){
         Random rand = new Random();
-        int  result = streng + rand.Next(weapon[0],weapon[1]);
+        int  result = rand.Next(streng - 3, streng +3);
         return result;
     }
-    public int Deffend(int streng, int shield) => streng+shield;   
+    public int Deffend() => streng+shield;   
     public void Hill(int hill) {
         if(HP<MAX_HP){ 
             if(HP+hill>MAX_HP){
@@ -22,6 +26,7 @@ class Enumy{
             }
         }
     }
+    public void HPDown(int attack) => HP-=attack;
     public void StrengUpEnemy() => streng++;
     public void ShildUpUpEnemy() => shield++;
     
@@ -49,12 +54,14 @@ class Enumy{
         streng = 10;
         shield = 2;
         koshel = 25;
+        IsPlaer = true;
     }
     //Конструктор для врага
     public Enumy(int LvL){
+        IsPlaer = false;
         Random rnd = new Random();//На сумму выйгрыша
         HP = 10 + (5*LvL);
-        streng = 10;
+        streng = 10+2*LvL;
         shield = 0+5*LvL;
         koshel = 2+ rnd.Next(LvL,4+LvL);
     }

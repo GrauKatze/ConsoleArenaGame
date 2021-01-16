@@ -9,7 +9,7 @@ class Shop{
         "2. StrengUP", 
         "3. HillUP", 
         "0. Exit"};
-    public int ShopMenu(){
+    public int ShopMenuResult(){
         int result=-1;
         Console.Write("МАГАЗИН: меню >");
         string input = Console.ReadLine();
@@ -25,28 +25,28 @@ class Shop{
         Console.WriteLine();
         foreach(string i in ShopList) Console.WriteLine(i);
         for(;;){
-            switch(ShopMenu()){
+            switch(ShopMenuResult()){
                 case -1:
-                break;
+                    break;
                 case 1:
                     if(ByShop(pers, SheildUp)){
                         pers.ShildUpUpEnemy();
                     }
-                break;
+                    break;
                 case 2:
                     if(ByShop(pers, StrengUp)){
                         pers.StrengUpEnemy();
                     }
-                break;
+                    break;
                 case 3:
                     if(ByShop(pers, HillUp)){
                         pers.Hill(HillUp);
                     }
-                break;
+                    break;
                 case 0:
                     Podgotovka pdgtvk = new Podgotovka();
                     pdgtvk.StartMenu(Pers, 0);
-                break;
+                    break;
                 default:
                     Console.WriteLine("What?");
                     break;
