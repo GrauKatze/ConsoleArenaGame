@@ -62,7 +62,7 @@ class Enumy{
         Random rnd = new Random();//На сумму выйгрыша
         HP = 10 + (5*LvL);
         streng = 10+2*LvL;
-        shield = 0+5*LvL;
+        shield = 0+2*LvL;
         koshel = 2+ rnd.Next(LvL,4+LvL);
     }
 }

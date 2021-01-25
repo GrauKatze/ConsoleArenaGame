@@ -26,13 +26,22 @@ class Battle
                 if(First.IsPlaer){
                     switch(BattleMenuResult()){
                         case 1:
-                            int attack = Pers.Attack();
-                            Console.WriteLine("Атака: "+ attack);
-                            Enum.HPDown(Enum.Deffend()-attack);
+                            int PersAttack = Pers.Attack();
+                            Console.WriteLine("Атака: "+ PersAttack);
+                            Enum.HPDown(Enum.Deffend()-PersAttack);
+                        break;
+                        case 2:
+                            int def = Pers.Deffend();
+                            Console.WriteLine("Защита: "+ def);
+                            Pers.HPDown(Pers.Deffend()-Enum.Attack());
+                        break;
+                        case 3:
+                            Console.WriteLine("Ничего");
                         break;
                         default:
                         break;
                     }
+
                 }else{
                     int at = Enum.Attack();
                     switch(BattleMenuResult()){
