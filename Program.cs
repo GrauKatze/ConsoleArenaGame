@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace TestGame
+namespace ArenaConsoleGame
 {
     class Program
     {
@@ -8,10 +8,9 @@ namespace TestGame
         {
             Podgotovka pdgtvk = new Podgotovka();
             Enumy Pers = Inizial();
-            /*Приветсвие игрока
+            
+            Console.WriteLine("Приветствую, " + Pers.name +", на 23ий турнир великих сражений!");
 
-
-            Добавить сюда */
             pdgtvk.StartMenu(Pers, 0);
         }
         static Enumy Inizial(){

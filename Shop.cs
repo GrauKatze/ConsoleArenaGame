@@ -5,9 +5,9 @@ class Shop{
                 HillUp = 5,
                 StrengUp =5;
     private string[] ShopList = {"\nВ магазине:",
-        "1. ShildUP", 
-        "2. StrengUP", 
-        "3. HillUP", 
+        "1. ShildUP\t 5", 
+        "2. StrengUP\t 5", 
+        "3. HillUP\t 5", 
         "0. Exit"};
     public int ShopMenuResult(){
         int result=-1;
@@ -31,16 +31,19 @@ class Shop{
                 case 1:
                     if(ByShop(pers, SheildUp)){
                         pers.ShildUpUpEnemy();
+                        Console.WriteLine("ShieldUp \nкошель: "+Pers.GetKoshel());
                     }
                     break;
                 case 2:
                     if(ByShop(pers, StrengUp)){
                         pers.StrengUpEnemy();
+                        Console.WriteLine("StrengUp \nкошель: "+Pers.GetKoshel());
                     }
                     break;
                 case 3:
                     if(ByShop(pers, HillUp)){
                         pers.Hill(HillUp);
+                        Console.WriteLine("HilldUp \nкошель: "+Pers.GetKoshel());
                     }
                     break;
                 case 0:
@@ -52,7 +55,6 @@ class Shop{
                     break;
             }
         }
-
     }
     public bool ByShop(Enumy pers, int Price){
         if(pers.GiveMoney(Price) >= Price ) {return true;}

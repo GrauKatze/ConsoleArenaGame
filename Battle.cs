@@ -1,59 +1,48 @@
 using System;
+using System.Threading;
 class Battle
     {
+        private string[] BattleMenuList ={"\nОсновное меню:",
+            "1. атака", 
+            "2. защита" };
         public void battle(Enumy pers, int LvL)
         {
             Enumy Enum = new Enumy(LvL);
             Enumy Pers = pers;
-            Enumy First, Second;
+            Enumy PersReserv = pers;
 
-            if(Inizial()==0){
+            if(FirstAttackInizial()==0){
                 Console.WriteLine("Первый - Вы!");
-                First = Pers;
-                Second = Enum;
             }else{
                 Console.WriteLine("Первый - ваш опонент");
-                First = Enum;
-                Second = Pers;
+                Pers.HPDown(Enum.Attack());
             }
             
             int round=1;
 
-            //TODO: процесс битвы
+            foreach(string i in BattleMenuList) Console.WriteLine(i);
+
             do{
                 Console.WriteLine("Раунд: "+round);
-
-                if(First.IsPlaer){
-                    switch(BattleMenuResult()){
-                        case 1:
-                            int PersAttack = Pers.Attack();
-                            Console.WriteLine("Атака: "+ PersAttack);
-                            Enum.HPDown(Enum.Deffend()-PersAttack);
-                        break;
-                        case 2:
-                            int def = Pers.Deffend();
-                            Console.WriteLine("Защита: "+ def);
-                            Pers.HPDown(Pers.Deffend()-Enum.Attack());
-                        break;
-                        case 3:
-                            Console.WriteLine("Ничего");
-                        break;
-                        default:
-                        break;
-                    }
-
-                }else{
-                    int at = Enum.Attack();
-                    switch(BattleMenuResult()){
-                        case 1:
-                        break;
-                        default:
-                        break;
-                    }
+                switch(BattleMenuResult()){
+                    case 1:
+                        Console.WriteLine("Атака: "+ Pers.Attack());
+                        Enum.HPDown(Enum.Deffend()-Pers.Attack());
+                        Pers.HPDown(Enum.Attack()-Pers.GetStreng());
+                    break;
+                    case 2:
+                        Console.WriteLine("Защита: "+ Pers.Deffend());
+                        Pers.HPDown(Pers.Deffend()-Enum.Attack());
+                    break;
+                    case 3:
+                        Console.WriteLine("Ничего");
+                    break;
+                    default:
+                    break;
                 }
-                Console.WriteLine("HP player: " + Pers.GetHP(), " Enum HP: " + Enum.GetHP());
+                Console.WriteLine("HP player: " + Pers.GetHP() + "\nEnum HP: " + Enum.GetHP());
                 round++;
-            }while(Enum.GetHP()>0||Pers.GetHP()>0);
+            }while(Enum.GetHP()>0 && Pers.GetHP()>0);
 
             //result
             if(Pers.GetHP()>0 && Enum.GetHP()<=0){
@@ -65,15 +54,14 @@ class Battle
             }else{
                 Console.WriteLine("No Winner!");
                 Console.WriteLine("Битва будет происходить по новой!");
-                battle(Pers, LvL);
+                battle(PersReserv, LvL);
             }
-
-
             Podgotovka pdgtvk = new Podgotovka();
             pdgtvk.StartMenu(Pers, LvL);
         }
-        public int Inizial(){
+        public int FirstAttackInizial(){
             Console.WriteLine("Определяем первый ход!");
+            Thread.Sleep(1000);
             Random rnd = new Random();
             return rnd.Next(1);
         }

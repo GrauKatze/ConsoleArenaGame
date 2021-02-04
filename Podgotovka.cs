@@ -33,9 +33,8 @@ class Podgotovka
                         shop.PrintShopList(pers);
                         break;
                     case 2:
-                        Console.WriteLine("Not ready");
-                        /*Battle btl = new Battle();
-                        btl.battle(Pers, LvL);*/
+                        Battle btl = new Battle();
+                        btl.battle(Pers, LvL);
                         break;
                     case 3:
                         pers.Stata();
