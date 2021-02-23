@@ -1,7 +1,6 @@
 using System;
 using System.Threading;
-class Podgotovka
-    {
+class Podgotovka{
         private string[] StartMenuList ={"\nОсновное меню:",
             "1. Магазин", 
             "2. В бой",
@@ -20,8 +19,7 @@ class Podgotovka
                 return result;
             }
         }
-        public void StartMenu(Enumy pers, int LvL)
-        {
+        public void StartMenu(Enumy pers, int LvL){
             Enumy Pers = pers;
             foreach(string i in StartMenuList) Console.WriteLine(i);
             for(;;){
