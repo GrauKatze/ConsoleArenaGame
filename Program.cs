@@ -6,7 +6,7 @@ namespace ArenaConsoleGame{
             Podgotovka pdgtvk = new Podgotovka();
             Enumy Pers = Inizial();
             
-            Console.WriteLine("Приветствую, " + Pers.name +", на 23-й турнир великих сражений!");
+            Console.WriteLine("Приветсhтhiugвую, " + Pers.name +", на 23-й турнир великих сражений!");
 
             pdgtvk.StartMenu(Pers, 0);
         }
